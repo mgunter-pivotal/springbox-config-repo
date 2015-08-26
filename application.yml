@@ -2,10 +2,10 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
-      instanceId: ${vcap.application.instance_id:${spring.application.name}:${server.port:8080}}
-  client:    # <--- ADD THE CLIENT SECTION!!!
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${server.port:80}}
+  client:   
     serviceUrl:
-      defaultZone: ${vcap.services.springbox-service-registry.credentials.uri:http://127.0.0.1:8761}/eureka/
+      defaultZone: ${vcap.services.springbox-service-registry.credentials.uri:http://http://springbox-eureka-hemostatic-bacteriologist.cfapps.io/}/eureka/
 ---
 spring:
   profiles: cloud
